@@ -1,0 +1,24 @@
+.header{grid-area: header;}
+.managers{grid-area: managers;}
+.employees{grid-area: employees;}
+.profileInfo{grid-area: sideBar;}
+.bodyContainer{
+    max-width: 1300px;
+    display: grid;
+    grid-template-areas: 
+    'sideBar header header header header'
+    'sideBar managers managers managers managers'
+    'sideBar managers managers managers managers'
+    'sideBar employees employees employees employees'
+    'sideBar employees employees employees employees'
+    'sideBar employees employees employees employees';
+    column-gap: 10px;
+    row-gap: 10px;
+    margin: auto;
+}
+@media screen and (max-width: 500px) {
+    .bodyContainer{
+        display: flex;
+        flex-direction: column;
+    }
+}

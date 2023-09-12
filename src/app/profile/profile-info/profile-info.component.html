@@ -1,0 +1,14 @@
+<section class="profileInfoContainer">
+    <div id="imageContainer">
+        <img [src]="selectedPic??'https://iili.io/HUfysQS.jpg'" alt="" id="profilePic">
+        <div id="changeProfilePic">
+            <span (click)="pickImage()">CHANGE</span>
+        </div>
+    </div>
+    <div id="userInfo">
+        <h2>Full Name Here</h2>
+        <h3>Role Here</h3>
+        <h3><a href="example@example.com"> example@example.com</a></h3>
+    </div>
+    <input type="file" id="profileImageInput" accept="image/*" (change)="onImagePicked($event)">
+</section>
