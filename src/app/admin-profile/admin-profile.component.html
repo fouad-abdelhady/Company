@@ -1,5 +1,5 @@
 <section class="bodyContainer">
-    <app-profile-info class="profileInfo" *ngIf="allManagers"></app-profile-info>
+    <app-profile-info class="profileInfo" *ngIf="profile" [profile]="profile"></app-profile-info>
     <app-header class="header" *ngIf="profile" [name]="profile.fullName"></app-header>
     <app-employees class="managers" [sectionTitle]="'Managers'" *ngIf="allManagers" [staff]="allManagers"></app-employees>
     <app-employees [sectionTitle]="'Employees'" class="employees" *ngIf="allEmployees" [staff]="allEmployees.staffMembers"></app-employees>

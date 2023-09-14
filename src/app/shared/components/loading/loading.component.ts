@@ -6,6 +6,9 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./loading.component.css']
 })
 export class LoadingComponent {
+  constructor(){
+
+  }
   @Input() showLoading = false;
   
 }
