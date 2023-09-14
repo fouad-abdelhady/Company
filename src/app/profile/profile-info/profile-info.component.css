@@ -84,10 +84,19 @@
 #profileImageInput{
     display: none;
 }
+.logoutBtn{
+    margin-top: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
 @media screen and (max-width: 500px) {
     .profileInfoContainer{
         display: flex;
         flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
         border: 0;
         max-width:none ;
         width: 100%;
@@ -96,13 +105,13 @@
         width: 100px;
         height: 100px;
     }
+  
     .profileInfoContainer :where(img){
         width: 100px;
         height: 100px;
-        object-fit: cover;
-        border-radius: 50%;
-        margin-bottom: 0;
-        margin-right: 10px;
+    }
+    #userInfo{
+        align-items: start;
     }
     #userInfo :where(h2){
         text-align: start;
@@ -110,4 +119,18 @@
     #userInfo :where(h3){
         text-align: start;
     }
+    .logoutBtn{
+        margin-top: 0;
+    }
+}
+@media screen and (max-width: 400px){
+    #imageContainer{
+        width: 50px;
+        height: 50px;
+    }
+  
+    .profileInfoContainer :where(img){
+        width: 50px;
+        height: 50px;
+    }   
 }

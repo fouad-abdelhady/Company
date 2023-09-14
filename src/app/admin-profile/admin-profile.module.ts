@@ -8,6 +8,7 @@ import { PagesBarComponent } from './pages-bar/pages-bar.component';
 import { ProfileModule } from '../profile/profile.module';
 import { EmployeeRegComponent } from './employee-reg/employee-reg.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SharedComponentsModule } from '../shared/components/shared-components.module';
 @NgModule({
   declarations: [
     AdminProfileComponent,
@@ -18,7 +19,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     AdminProfileRoutingModule,
     ProfileModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedComponentsModule
   ]
 })
 export class AdminProfileModule { }

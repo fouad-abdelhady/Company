@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
+import { ProfileRes } from 'src/app/models/staff/profile';
+import { AuthInterceptor } from 'src/app/services/auth.interceptor';
+import { StaffService } from 'src/app/services/staffServices/staff.service';
 
 @Component({
   selector: 'app-profile-info',
@@ -7,8 +11,19 @@ import { Component } from '@angular/core';
 })
 export class ProfileInfoComponent {
   selectedPic?: string;
+  @Input() profile?: ProfileRes;
+  defulatImage = "https://iili.io/HUfysQS.jpg";
+  constructor(private router: Router, private staffService:StaffService){
+    this.profile = this.profile??{
+      fullName: "Full Name Here",
+      role: "Role Here",
+      email: "example@example.com",
+      image: "https://iili.io/HUfysQS.jpg"
+    };
+  }
   pickImage(){
     document.getElementById('profileImageInput')?.click();
+
   }
   onImagePicked(event:any){
     const selectedFile = event.target.files[0];
@@ -21,6 +36,21 @@ export class ProfileInfoComponent {
   }
   private _onImageLoaded(e: ProgressEvent<FileReader>){
     this.selectedPic = e.target!.result as string;
-    console.log(this.selectedPic)
+    this._updateProfileImage();
+  }
+  private _updateProfileImage() {
+    if(!this.selectedPic) return;
+    this.staffService.updateProfileImage({newImage: this.selectedPic}).subscribe({
+      next: res=>{
+          this.profile!.image = this.selectedPic!;
+      },
+      error: err=>{
+
+      }
+    });
+  }
+  logout(){
+    localStorage.removeItem(AuthInterceptor.TOKEN_KEY);
+    this.router.navigate(['']);
   }
 }

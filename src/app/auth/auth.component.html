@@ -1,9 +1,12 @@
 <section id="loginContainer">
     <h1>LOG IN</h1>
-    <form action="" method="post">
-        <div><input type="text" name="username" placeholder="User Name"></div>
-        <div><input type="password" name="password" placeholder="Password Here"></div>
-        <span class="errorMessage">Error Messages Gose here</span>
-        <button type="submit">LOG IN </button>
+    <form>
+        <div><input type="text" name="username" placeholder="User Name" [(ngModel)] = "userName"></div>
+        <div><input type="password" name="password" placeholder="Password Here"[(ngModel)] = "password"></div>
+        <span class="errorMessage">{{error}}</span>
+        <button (click) ="login()">LOG IN </button>
     </form>
+    <ng-container *ngIf="showLoading">
+        <app-loading [showLoading]="true"></app-loading>
+    </ng-container>
 </section>

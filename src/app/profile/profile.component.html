@@ -1,6 +1,7 @@
 <section class="bodyContainer">
-    <app-profile-info class="profileInfo"></app-profile-info>
-    <app-header class="header"></app-header>
-    <app-managers class="managers"></app-managers>
-    <app-employees class="employees"></app-employees>
+    <app-profile-info [profile]="profile" class="profileInfo"></app-profile-info>
+    <app-header class="header" *ngIf="profile" [name]="profile.fullName"></app-header>
+    <app-managers class="managers" *ngIf="userTeam && userTeam.manager" [manager]="userTeam.manager"></app-managers>
+    <app-employees class="employees" *ngIf="userTeam && userTeam.team && userTeam.team.length>0"[staff]="userTeam.team"></app-employees>
 </section>
+<app-loading [showLoading]="true" *ngIf="showLoading"></app-loading>

@@ -1,0 +1,29 @@
+.laoding-container{
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   z-index: 3;
+}
+.image-container{
+    width: 100px;
+    height: 120px;
+    overflow: hidden;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    font-size: 0.8rem;
+    padding: 5px;
+}
+.laoding-container :where(img){
+   width: 100px;
+   height: 100px;
+   object-fit: cover;
+}

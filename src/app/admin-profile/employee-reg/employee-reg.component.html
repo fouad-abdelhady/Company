@@ -1,26 +1,26 @@
 <section id="empRegContainer" [style.top]="show? '0':'100%'">
     <div>
-        <form [formGroup]="staffMemberInfo" (ngSubmit)="addUser">
+        <form [formGroup]="staffMemberInfo" >
             <input type="text" formControlName="fullName" placeholder="Full Name">
             <input type="email"  formControlName="email" placeholder="Email">
             <input type="number" formControlName="salary" placeholder="Salary">
             <input type="text" formControlName="userName" placeholder="User Name(for login)">
             <input type="password" formControlName="initPassword" placeholder="Initial Password">
             <div>
-                <input type="radio" formControlName="role" id="employee" value="employee" selected>
+                <input type="radio" formControlName="role" id="employee" value="employee" (change)="onRoleSelectChanged()">
                 <label for="employee">Employee</label>
             </div>
             <div>
-                <input type="radio" formControlName="role" id="manager" value="manager">
+                <input type="radio" formControlName="role" id="manager" value="manager" (change)="onRoleSelectChanged()">
                 <label for="manager">Manager</label>
             </div>
-            <select name="cars" id="cars">
+            <select formControlName="managerId">
                 <ng-container *ngFor="let manager of managersList">
                     <option [value]="manager.id">{{manager.name}}</option>
                 </ng-container>
             </select>
-            <span>Errors Comes Here</span>
-            <button type="submit"> ADD USER</button>
+            <span>{{error}}</span>
+            <button (click)="addUser()"> ADD USER</button>
             <button (click)="cancel()" id="cancel">CANCEL</button>
         </form>
     </div>

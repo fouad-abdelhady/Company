@@ -7,8 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { ManagersComponent } from './managers/managers.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { ProfileInfoComponent } from './profile-info/profile-info.component';
-
-
+import { SharedComponentsModule } from '../shared/components/shared-components.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +19,8 @@ import { ProfileInfoComponent } from './profile-info/profile-info.component';
   ],
   imports: [
     CommonModule,
-    ProfileRoutingModule
+    ProfileRoutingModule,
+    SharedComponentsModule
   ],
   exports:[
     HeaderComponent,
@@ -29,4 +29,6 @@ import { ProfileInfoComponent } from './profile-info/profile-info.component';
     ProfileInfoComponent
   ]
 })
-export class ProfileModule { }
+export class ProfileModule {
+  
+ }
