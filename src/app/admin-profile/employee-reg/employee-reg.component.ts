@@ -45,8 +45,14 @@ export class EmployeeRegComponent{
 
   private _isValid() {
     this.error = "";
+    
     if(!this.staffMemberInfo.valid){
       this.error = "Please fill all the fields";
+      return false;
+    }
+    let regexp = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+    if(!regexp.test(this.staffMemberInfo.controls.email.value!)){
+      this.error = "Enter Valid Email";
       return false;
     }
     if(this.staffMemberInfo.controls.role.value == "employee" && !this.staffMemberInfo.controls.managerId.value){
@@ -55,6 +61,11 @@ export class EmployeeRegComponent{
     }
     if(this.staffMemberInfo.controls.salary.value!<= 0){
       this.error = "Enter Valid Salary";
+      return false;
+    }
+    let password = `${this.staffMemberInfo.controls.initPassword.value}`;
+    if(password.length < 8){
+      this.error = "Password must be at least 8 characters";
       return false;
     }
     return true;

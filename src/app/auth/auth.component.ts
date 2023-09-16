@@ -22,6 +22,7 @@ export class AuthComponent implements OnInit {
   }
   login() {
     this.error = "";
+    if(!this._isvalid()) return;
     this.showLoading = true;
     this.authService.login({
       userName: this.userName,
@@ -36,6 +37,11 @@ export class AuthComponent implements OnInit {
         this.showLoading = false;
         if(err.status === 401) this.error = "Wrong user name or password."      }
     });
+  }
+  private _isvalid() {
+    if(this.userName && this.password) return true;
+    this.error = "Enter the user name and password."
+    return false;
   }
   private _onLoginSuccess(role: string){
     if(role.toLocaleLowerCase() == "manager" || role.toLocaleLowerCase() == "employee"){
