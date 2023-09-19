@@ -1,0 +1,42 @@
+<section class="tasksContainer" >
+    <h1>TASKS</h1>
+    <div class="taskStatusDes">
+        <div>
+            <label>Seen: </label>
+            <div class="statusColorDiv" [style.background-color]="getTaskColor(1)"></div>
+        </div>
+        <div>
+            <label>On Progress: </label>
+            <div class="statusColorDiv" [style.background-color]="getTaskColor(2)"></div>
+        </div>
+        <div>
+            <label>Done: </label>
+            <div class="statusColorDiv" [style.background-color]="getTaskColor(3)"></div>
+        </div>
+        <div>
+            <label>Graded: </label>
+            <div class="statusColorDiv" [style.background-color]="getTaskColor(4)"></div>
+        </div>
+    </div>
+    <div class="tasks">
+        <ng-container *ngIf="userTasksRes">
+            <ng-container *ngFor="let task of userTasksRes.tasksList; let itemIndex = index;">
+                <div class="taskItem" (click)="showTaskDetails(itemIndex)" [style.background-color]="getTaskColor(task.status)">
+                    <div class="staffmemberDetails">
+                        <img [src]="task.staffMember.image??defulatImage" alt="">
+                        <div>
+                            <span>{{task.staffMember.name.split(' ')[0]}}</span>
+                            <a href="mailto:{{task.staffMember.email}}"
+                            *ngIf="task.staffMember.role.toLowerCase() == 'employee'"> Email </a>
+                        </div>
+                        <!--*ngIf="task.staffMember.role.toLowerCase() == 'employee'"-->
+                    </div>
+                    <h2>{{task.title}}</h2>
+                    <p>{{task.description}}</p>
+                </div>
+            </ng-container>
+        </ng-container>
+    </div>
+    <app-task-details class="task-details" [task]="selectedTask" (onTaskDetailsClose) = "closeTaskDetails()" (onTaskUpdate)="onTaskUpdate()"  [show]="taskDetails"></app-task-details>
+</section>
+<app-loading [showLoading]="showLoading"></app-loading>

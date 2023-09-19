@@ -15,6 +15,7 @@ export class ProfileInfoComponent {
   defulatImage = "https://iili.io/HUfysQS.jpg";
   constructor(private router: Router, private staffService:StaffService){
     this.profile = this.profile??{
+      id:0,
       fullName: "Full Name Here",
       role: "Role Here",
       email: "example@example.com",

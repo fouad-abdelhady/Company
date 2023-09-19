@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.tasksContainer{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 2vh 3vw;
+}
+.tasksContainer > h1{
+    font-size: 3rem;
+    margin: 5vh 4vw;
+    font-weight: 350;
+    
+}
+.tasks{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+.taskItem{
+    display: flex;
+    flex-direction: column;
+    text-overflow: ellipsis;
+    background-color: whitesmoke;
+    padding: 10px ;
+    height: 200px;
+    border-radius: 15px;
+    box-shadow: 3px 3px 5px gray;
+    transition: 0.5s;
+    cursor: pointer;
+}
+#ghh > div{
+    background-color: rgba(202, 12, 12, 0.901);
+    color: rgb(76, 202, 18);
+}
+.taskItem:hover{
+    box-shadow: 0px 0px 3px gray
+}
+.staffmemberDetails{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+.staffmemberDetails > div{
+    flex-grow: 2;
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+}
+.staffmemberDetails :where(a){
+    color: black;
+    text-decoration: none;
+    align-self: flex-start;
+}
+.staffmemberDetails :where(span){
+    font-size: 1.2rem;
+    align-self: flex-start;
+}
+.staffmemberDetails :where(img){
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.taskItem > h2{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+.taskItem > p{
+    text-overflow: ellipsis;
+    text-align: center;
+    font-size: 1rem;
+    font-style: italic;
+}
+.taskStatusDes{
+    display: flex;
+    gap: 15px;
+    margin: 15px 0;
+}
+.taskStatusDes > div{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+}
+.statusColorDiv{
+    width: 25px;
+    height: 25px;
+    border: 1px solid gray;
+    border-radius: 50%;
+}
+

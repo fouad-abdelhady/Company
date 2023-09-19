@@ -1,6 +1,6 @@
 <section class="bodyContainer">
     <app-profile-info class="profileInfo" *ngIf="profile" [profile]="profile"></app-profile-info>
-    <app-header class="header" *ngIf="profile" [name]="profile.fullName"></app-header>
+    <app-header class="header" *ngIf="profile" [name]="profile.fullName" [role]="profile.role"></app-header>
     <app-employees class="managers" [sectionTitle]="'Managers'" *ngIf="allManagers" [staff]="allManagers"></app-employees>
     <app-employees [sectionTitle]="'Employees'" class="employees" *ngIf="allEmployees" [staff]="allEmployees.staffMembers"></app-employees>
     <app-employee-reg [show]="showAddStaff" (addingUerCancelled)="showAddStaffMember()" [managersList]="allManagers" (onNewMemberAdded)="onNewMemberAdded($event)"></app-employee-reg>

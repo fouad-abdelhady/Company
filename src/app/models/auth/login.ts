@@ -1,4 +1,5 @@
 export type LoginRes ={
+        id:number,
         fullName: string,
         role: string,
         email: string,

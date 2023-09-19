@@ -1,0 +1,39 @@
+<section id="bodyContainer" [style.width]="show?'100%':'0'">
+    <div class="taskDetailsContainer" *ngIf="task">
+        <div class="staffMemberInfo" >
+            <img [src]="task && task.staffMember.image?task.staffMember.image:defulatImage" alt="">
+            <div>
+                <h3>{{task!.staffMember.name}}</h3>
+                <a href="mailto:{{task!.staffMember.email}}">{{task!.staffMember.email}}</a>
+            </div>
+        </div>
+        <div class="task-details">
+            <div class="detail">
+                <label>Status: </label>
+                <span>{{getStatus(task!.status)}}</span>
+            </div>
+            <div class="detail">
+                <label>Grade: </label>
+                <span>{{task!.grade??"Not Graded"}}</span>
+            </div>
+        </div>
+        <div class="taskInfo">
+            <h2>{{task!.title}}</h2>
+            <p>Description</p>
+            <span>{{task!.description}}</span>
+        </div>
+        <h4>{{error}}</h4>
+        <div *ngIf="task!.staffMember.role.toLowerCase() == 'manager' && task.status <4" id="employeeOptions">
+            <button id="done-btn" (click)="updateStatus()">UPDATE STATUS</button>
+            <select name="status" id="taskStatus" [(ngModel)]="taskStatus">
+                <option value= 2 selected> On Progress</option>
+                <option value= 3 >Done</option>
+            </select>
+        </div>
+        <div class="manager-option" *ngIf="task!.staffMember.role.toLowerCase() == 'employee'">
+            <button (click) = "setGrade()"> SET GRADE</button>
+            <input type="number" max=10 min=0 inputmode="numeric" [(ngModel)] = "givenGrade">
+        </div>
+        <button id="closeButton" (click)="closeSideBar()"> Close </button>
+    </div>
+</section>

@@ -1,0 +1,112 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.2rem;
+}
+#taskReg{
+    z-index: 2;
+   position: fixed;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   height: 100%;
+   background-color: rgba(16, 16, 16, 0.485); 
+   transition: 1s;
+}
+#taskReg > div{
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    min-width: max-content;
+    width: 25%;
+    transform: translate(-50%);
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    background-color: whitesmoke;
+}
+#taskReg :where(form){
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    width: max-content;
+    width: 100%;
+}
+#taskReg :where(input, textarea){
+    border: 0;
+    outline: none;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 20px;
+    text-align: center;
+    background-color: white;
+    border: 1px solid #ccc;
+    font-weight: 300;
+    width: 100%;
+    resize: none;
+}
+textarea :focus {
+    border: 2px solid #007bff; /* Replace with your desired focus border style */
+}
+section button{
+    width: 90%;
+    border: 0;
+    outline: none;
+    font-size:0.95rem;
+    font-weight: 300;
+    margin: 5px 0;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: rgb(61, 60, 60);
+    letter-spacing: 2px;
+    color: whitesmoke;
+}
+#cancel{
+    background-color: rgb(183, 25, 25);
+}
+/*form > div{
+    font-size: 0.9rem;
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+    align-self: flex-start;
+}*/
+form :where(span){
+    color: red;
+    font-size: 0.9rem;
+}
+select{
+    outline: 0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-weight: 300;
+    width: 90%;
+    padding: 5px;
+    margin: 15px 0;
+    text-align: center;
+}
+option{
+    font-weight: 300;
+}
+#newTaskButton{
+     position: fixed;
+     bottom: 30px;
+     right: 30px;
+     border: 1px solid #ccc;
+     background-color: white;
+     padding: 15px 20px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     gap: 10px;
+     border-radius: 15px;
+     box-shadow: 3px 3px 5px gray;
+     font-size: 1rem;
+     transition: box-shadow 0.5s ease-in-out;
+}
+#newTaskButton:hover {
+    box-shadow: 0px 0px 3px gray;
+}

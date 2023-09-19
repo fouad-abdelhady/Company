@@ -8,19 +8,26 @@ import { ManagersComponent } from './managers/managers.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { ProfileInfoComponent } from './profile-info/profile-info.component';
 import { SharedComponentsModule } from '../shared/components/shared-components.module';
-
+import { NewTaskComponent } from './new-task/new-task.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { EmployeeHeaderComponent } from './employee-header/employee-header.component';
+import { EmployeeTasksComponent } from './employee-tasks/employee-tasks.component';
 @NgModule({
   declarations: [
     ProfileComponent,
     HeaderComponent,
     ManagersComponent,
     EmployeesComponent,
-    ProfileInfoComponent
+    ProfileInfoComponent,
+    NewTaskComponent,
+    EmployeeHeaderComponent,
+    EmployeeTasksComponent
   ],
   imports: [
     CommonModule,
     ProfileRoutingModule,
-    SharedComponentsModule
+    SharedComponentsModule,
+    ReactiveFormsModule
   ],
   exports:[
     HeaderComponent,

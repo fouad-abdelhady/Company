@@ -1,7 +1,15 @@
 <section class="bodyContainer">
     <app-profile-info [profile]="profile" class="profileInfo"></app-profile-info>
-    <app-header class="header" *ngIf="profile" [name]="profile.fullName"></app-header>
+    <app-header class="header" *ngIf="profile && profile.role.toLocaleLowerCase() != 'employee'"
+        [name]="profile.fullName" [role]="profile.role"></app-header>
+    <app-employee-header class="header" *ngIf="profile && profile.role.toLocaleLowerCase() == 'employee'"
+        [name]="profile.fullName" [employeeId]="profile.id"></app-employee-header>
     <app-managers class="managers" *ngIf="userTeam && userTeam.manager" [manager]="userTeam.manager"></app-managers>
-    <app-employees class="employees" *ngIf="userTeam && userTeam.team && userTeam.team.length>0"[staff]="userTeam.team"></app-employees>
+    <app-employees class="employees" *ngIf="userTeam && userTeam.team && userTeam.team.length>0" [staff]="userTeam.team"
+        (onClick)="employeeClicked($event)"></app-employees>
 </section>
 <app-loading [showLoading]="true" *ngIf="showLoading"></app-loading>
+<app-new-task *ngIf="shouldIShow()" [employeesList]="userTeam!.team"></app-new-task>
+<ng-container *ngIf="selectedEmployee">
+    <app-employee-tasks (onWindowClose)="onEmployeeProfileClosed()" [show] = "showEmployeeTasks" [employeeId]="selectedEmployee"></app-employee-tasks>
+</ng-container>

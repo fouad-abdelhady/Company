@@ -15,6 +15,8 @@ export class ProfileComponent implements OnInit {
   showLoading = false;
   userTeam?: UserTeamRes;
   profile?: ProfileRes;
+  showEmployeeTasks = false;
+  selectedEmployee?:number;
   constructor(private staffService: StaffService, private router:Router){
   }
   ngOnInit(): void {
@@ -59,4 +61,19 @@ export class ProfileComponent implements OnInit {
   private _dismissLoading() {
     this.showLoading = (this.gettingTeamDone && this.gettingTeamDone);
   }
+  shouldIShow(){
+    return this.userTeam && this.userTeam.team && this.userTeam.team.length>0 && this.profile!.role.toLowerCase() == 'manager';
+  }
+  employeeClicked(index: number){
+    console.log('employee clicked');
+    if(this.profile?.role.toLocaleLowerCase()!="manager") return;
+    this.selectedEmployee = this.userTeam?.team[index].id;
+    this.showEmployeeTasks = true;
+    console.log(`the employee ${this.selectedEmployee}`);
+  }
+  onEmployeeProfileClosed(){
+    this.selectedEmployee = undefined;
+    this.showEmployeeTasks = false;
+  }
 }
+// 

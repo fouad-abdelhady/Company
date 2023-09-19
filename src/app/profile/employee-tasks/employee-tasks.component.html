@@ -1,0 +1,31 @@
+<section class="employeeTasksContainer" [style.width]="show?'100%':'0'">
+    <div class="placeHoler" (click) = "closeWindow()"></div>
+    <div class="InfoContainer" *ngIf="tasksList &&tasksList.length > 0">
+        <div class="employeeInfo">
+            <img [src]="getImage()" alt="">
+            <div>
+                <h3>{{tasksList[0].staffMember.name}}</h3>
+                <a href="mailto:{{tasksList[0].staffMember.email}}"> {{tasksList[0].staffMember.email}}</a>
+            </div>
+            <label (click)="closeWindow()">CLOSE</label>
+        </div>
+        <div class="tasksList">
+            <ng-container *ngFor="let task of tasksList">
+                <div class="taskItem">
+                    <h4>{{task.title}}</h4>
+                    <span>{{task.description}}</span>
+                        <div class="gradeContianer">
+                            <label> Grade: </label>
+                            <span>{{task.grade}}</span>
+                        </div>
+                </div>
+                
+            </ng-container>
+        </div>
+    </div>
+    <div class="noTasksWindow" *ngIf="!tasksList || tasksList.length <= 0" (click)="closeWindow()">
+        <div>
+            <span>There are no graded tasks for this employee.</span>
+        </div>
+    </div>
+</section>
