@@ -22,7 +22,7 @@ export class TaskServicesService extends Services {
     return this.httpClient.get<number>(this.getURL(TaskRoutes.getUnseenTasksCount));
   }
 
-  GetMyTasks(page = 1, limit = 30){
+  GetMyTasks(page = 1, limit = 12){
     let url = `${this.getURL(TaskRoutes.getMyTasks)}?page=${page}&limit=${limit}`;
     return this.httpClient.get<UserTasks>(url);
   }

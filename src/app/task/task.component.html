@@ -37,6 +37,8 @@
             </ng-container>
         </ng-container>
     </div>
+    <app-bottom-nav [pageInfo]="userTasksRes?.pageInfo" (onPageRequest)="onNewPageRequested($event)" ></app-bottom-nav>
     <app-task-details class="task-details" [task]="selectedTask" (onTaskDetailsClose) = "closeTaskDetails()" (onTaskUpdate)="onTaskUpdate()"  [show]="taskDetails"></app-task-details>
 </section>
+
 <app-loading [showLoading]="showLoading"></app-loading>

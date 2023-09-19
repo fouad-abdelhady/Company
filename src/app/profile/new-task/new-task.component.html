@@ -1,7 +1,7 @@
 <section id="taskReg" [style.top]="show? '0':'100%'">
     <div>
         <form [formGroup]="taskInfo" >
-            <input type="text" formControlName="taskTitle" placeholder="Title">
+            <input type="text" formControlName="taskTitle" placeholder="Title" maxlength=32>
             <select formControlName="employeeId">
                 <ng-container *ngFor="let employee of employeesList">
                     <option [value]="employee.id">{{employee.name}}</option>

@@ -26,6 +26,10 @@ export class NewTaskComponent {
       this.error = "Fill all the fields";
       return;
     }
+   let taskTitle:String = this.taskInfo.controls.taskTitle.value!;
+   if(taskTitle.length > 32){
+    this.error = "Only 32 characters are allowed";
+   }
     this.taskService.assignTask(
       this.taskInfo.controls.taskTitle.value!, 
       this.taskInfo.controls.taskDescription.value!, 

@@ -1,11 +1,5 @@
+import { PageInfo } from "../common/pageInfo";
 import { staffMember } from "../staff/userTeamRes"
-
-export type PageInfo = {
-    next: number | null,
-    previous: number | null,
-    current: number,
-    pagesCount: number
-}
 export type taskStaffMemeber = staffMember;
 export type task = {
     id: number,

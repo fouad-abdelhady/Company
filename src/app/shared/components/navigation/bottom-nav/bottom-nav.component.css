@@ -1,0 +1,38 @@
+#bottom-nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 20px 0;
+}
+.arrow{
+    background-color: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    transition: 0.5s;
+}
+.arrow :where(svg){
+    justify-self: center;
+    align-self: center;
+    width: 25px;
+    height: 25px;
+    transition: 0.5s;
+}
+#bottom-nav :first-child :where(svg){
+    transform: rotate(180deg);
+}
+.arrow:hover{
+    transform: scale(1.1);
+    background-color: rgb(37, 37, 37);
+}
+.arrow:hover > svg{
+    fill: whitesmoke;
+}
+#bottom-nav :where(label){
+    font-size: 1.2rem;
+}

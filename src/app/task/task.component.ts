@@ -16,6 +16,7 @@ export class TaskComponent implements OnInit, OnDestroy {
   selectedTask?: task;
   defulatImage = "https://iili.io/HUfysQS.jpg";
   isNotificationInit = false;
+  page = 1;
   constructor(private taskService: TaskServicesService, private nottifer: NotifierService, private router: Router){}
   ngOnDestroy(): void {
     this.nottifer.closeConnection();
@@ -29,7 +30,7 @@ export class TaskComponent implements OnInit, OnDestroy {
     this.nottifer.employeeId = this.userTasksRes!.callerId!;
     this.nottifer.UpdateUnseenCount = (count:number)=>{ 
       this.showLoading = true;
-    this.taskService.GetMyTasks().subscribe({
+    this.taskService.GetMyTasks(this.page).subscribe({
       next: res => {
         this.userTasksRes = res;
         this.showLoading = false;
@@ -49,7 +50,7 @@ export class TaskComponent implements OnInit, OnDestroy {
   private _GetMyTasks() {
 
     this.showLoading = true;
-    this.taskService.GetMyTasks().subscribe({
+    this.taskService.GetMyTasks(this.page).subscribe({
       next: res => {
         this.userTasksRes = res;
         this.showLoading = false;
@@ -80,6 +81,10 @@ export class TaskComponent implements OnInit, OnDestroy {
     this.taskDetails = false;
   }
   onTaskUpdate(){
+    this._GetMyTasks();
+  }
+  onNewPageRequested(newPage:number){
+    this.page = newPage;
     this._GetMyTasks();
   }
 }
