@@ -1,8 +1,8 @@
-import { Component, OnInit, Input, OnDestroy } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy, Inject, LOCALE_ID } from '@angular/core';
 import { TaskServicesService } from '../services/taskServices/task-services.service';
 import { UserTasks, task } from '../models/tasks/userTasksModel';
 import { Router } from '@angular/router';
-import { NotifierService } from '../services/taskServices/taskNotifier/notifier.service';
+import { NotifierService } from '../services/NotificationsServices/notifier.service';
 
 @Component({
   selector: 'app-task',
@@ -17,7 +17,9 @@ export class TaskComponent implements OnInit, OnDestroy {
   defulatImage = "https://iili.io/HUfysQS.jpg";
   isNotificationInit = false;
   page = 1;
-  constructor(private taskService: TaskServicesService, private nottifer: NotifierService, private router: Router){}
+  arabic: string = "ar-EG";
+  english:string = "en-US";
+  constructor(@Inject(LOCALE_ID) public locale: string ,private taskService: TaskServicesService, private nottifer: NotifierService, private router: Router){}
   ngOnDestroy(): void {
     this.nottifer.closeConnection();
   }
@@ -47,10 +49,10 @@ export class TaskComponent implements OnInit, OnDestroy {
     this.nottifer.startConnection();
     this.nottifer.addTransferDataListener();
   }
-  private _GetMyTasks() {
+  private _GetMyTasks(keywords = "") {
 
     this.showLoading = true;
-    this.taskService.GetMyTasks(this.page).subscribe({
+    this.taskService.GetMyTasks(this.page, 12, keywords).subscribe({
       next: res => {
         this.userTasksRes = res;
         this.showLoading = false;
@@ -86,5 +88,12 @@ export class TaskComponent implements OnInit, OnDestroy {
   onNewPageRequested(newPage:number){
     this.page = newPage;
     this._GetMyTasks();
+  }
+  getText(arabic:string, english:string):string{
+    return this.locale == this.arabic? arabic : english;
+  }
+  onKeywordEntered(keyword:string){
+    this.page = 1;
+    this._GetMyTasks(keyword??"");
   }
 }

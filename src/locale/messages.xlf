@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="2632360383464394685" datatype="html">
+        <source>Add Staff Member</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/admin-profile/admin-profile.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6959497441009812685" datatype="html">
+        <source>Full Name</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/admin-profile/employee-reg/employee-reg.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4768749765465246664" datatype="html">
+        <source>Email</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/admin-profile/employee-reg/employee-reg.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="498286527813307230" datatype="html">
+        <source>Salary</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/admin-profile/employee-reg/employee-reg.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7492406196979348755" datatype="html">
+        <source>User Name(for login)</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/admin-profile/employee-reg/employee-reg.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="623221856807203436" datatype="html">
+        <source>Initial Password</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/admin-profile/employee-reg/employee-reg.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4536004607617325628" datatype="html">
+        <source>Employee</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/admin-profile/employee-reg/employee-reg.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1540281436321485610" datatype="html">
+        <source>Manager</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/admin-profile/employee-reg/employee-reg.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/profile/managers/managers.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1180641791908278078" datatype="html">
+        <source> ADD USER</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/admin-profile/employee-reg/employee-reg.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6943486270557756671" datatype="html">
+        <source>CANCEL</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/admin-profile/employee-reg/employee-reg.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/profile/new-task/new-task.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5191100330723518802" datatype="html">
+        <source>Please fill all the fields</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/admin-profile/employee-reg/employee-reg.component.ts</context>
+          <context context-type="linenumber">50</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3657750572383247106" datatype="html">
+        <source>Enter Valid Email</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/admin-profile/employee-reg/employee-reg.component.ts</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8347691657473304519" datatype="html">
+        <source>Select a manager</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/admin-profile/employee-reg/employee-reg.component.ts</context>
+          <context context-type="linenumber">59</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3804123275539463968" datatype="html">
+        <source>Enter Valid Salary</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/admin-profile/employee-reg/employee-reg.component.ts</context>
+          <context context-type="linenumber">63</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2599853012922890508" datatype="html">
+        <source>Password must be at least 8 characters</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/admin-profile/employee-reg/employee-reg.component.ts</context>
+          <context context-type="linenumber">68</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1826215573205981970" datatype="html">
+        <source>Company</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.ts</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1754500060429112168" datatype="html">
+        <source>LOG IN</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/auth.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="160640128319879431" datatype="html">
+        <source>User Name</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/auth.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="728987632295220017" datatype="html">
+        <source>Password Here</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/auth.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3935348779952234766" datatype="html">
+        <source>LOG IN </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/auth.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1205746512734707716" datatype="html">
+        <source>Wrong user name or password.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/auth.component.ts</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4632415460983761764" datatype="html">
+        <source>Enter the user name and password.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/auth.component.ts</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4823331991482799139" datatype="html">
+        <source> Wellcome </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/profile/employee-header/employee-header.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/profile/header/header.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7456560158435590491" datatype="html">
+        <source>CLOSE</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/profile/employee-tasks/employee-tasks.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1635186999481858093" datatype="html">
+        <source> Grade: </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/profile/employee-tasks/employee-tasks.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4786204013292651250" datatype="html">
+        <source>There are no graded tasks for this employee.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/profile/employee-tasks/employee-tasks.component.html</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7512156736720786513" datatype="html">
+        <source>Team Members</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/profile/employees/employees.component.ts</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5701618810648052610" datatype="html">
+        <source>Title</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/profile/new-task/new-task.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="817561664805554562" datatype="html">
+        <source>Title in Arabic</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/profile/new-task/new-task.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4902817035128594900" datatype="html">
+        <source>Description</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/profile/new-task/new-task.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/task/task-details/task-details.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7584472644212242103" datatype="html">
+        <source>Arabic Description</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/profile/new-task/new-task.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2546353946840817145" datatype="html">
+        <source> ASSIGN TASK</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/profile/new-task/new-task.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4578192247039196794" datatype="html">
+        <source>Task</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/profile/new-task/new-task.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3053031664752448418" datatype="html">
+        <source>Fill all the fields</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/profile/new-task/new-task.component.ts</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4993728008876438853" datatype="html">
+        <source>Only 32 characters are allowed</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/profile/new-task/new-task.component.ts</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8905572433851272479" datatype="html">
+        <source>Make sure to write the title and description in arabic</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/profile/new-task/new-task.component.ts</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4057828344655361794" datatype="html">
+        <source>CHANGE</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/profile/profile-info/profile-info.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1139726559145415106" datatype="html">
+        <source>LOGOUT</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/profile/profile-info/profile-info.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7374240271241044293" datatype="html">
+        <source>LOADING ...</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/loading/loading.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4580988005648117665" datatype="html">
+        <source>Search</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/task/seach-bar/search-bar.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3236902958995987413" datatype="html">
+        <source>Status: </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/task/task-details/task-details.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8438703600453964687" datatype="html">
+        <source>Grade: </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/task/task-details/task-details.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="748562299383391303" datatype="html">
+        <source>Requested Changes</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/task/task-details/task-details.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/task/task-details/task-details.component.html</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="254692585026060647" datatype="html">
+        <source>UPDATE STATUS</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/task/task-details/task-details.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="696553368209319302" datatype="html">
+        <source> On Progress</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/task/task-details/task-details.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="397098723873502323" datatype="html">
+        <source>Done</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/task/task-details/task-details.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/task/task-details/task-details.component.ts</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/task/task-details/task-details.component.ts</context>
+          <context context-type="linenumber">102</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3622543719696652370" datatype="html">
+        <source> SET GRADE</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/task/task-details/task-details.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6346357924377938019" datatype="html">
+        <source>Grade</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/task/task-details/task-details.component.html</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2561909955178870835" datatype="html">
+        <source>Arabic Requested Changes</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/task/task-details/task-details.component.html</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="733021519476335548" datatype="html">
+        <source>REQUEST CHANGES</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/task/task-details/task-details.component.html</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5547981558491672240" datatype="html">
+        <source> Close </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/task/task-details/task-details.component.html</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7051326948537819824" datatype="html">
+        <source>Not Graded</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/task/task-details/task-details.component.ts</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="988403218498560915" datatype="html">
+        <source>Seen</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/task/task-details/task-details.component.ts</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6909458089534865569" datatype="html">
+        <source>On Progress</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/task/task-details/task-details.component.ts</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/task/task-details/task-details.component.ts</context>
+          <context context-type="linenumber">101</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="707050910170376072" datatype="html">
+        <source>Graded</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/task/task-details/task-details.component.ts</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="349886806405546888" datatype="html">
+        <source>Set grade between 0 and 10</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/task/task-details/task-details.component.ts</context>
+          <context context-type="linenumber">85</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5813089168258066194" datatype="html">
+        <source>The given grade must be between 0 and 10</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/task/task-details/task-details.component.ts</context>
+          <context context-type="linenumber">89</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2119050449260334403" datatype="html">
+        <source>Select Status</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/task/task-details/task-details.component.ts</context>
+          <context context-type="linenumber">96</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3360313195597001686" datatype="html">
+        <source>The task is already</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/task/task-details/task-details.component.ts</context>
+          <context context-type="linenumber">100</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="922349086608650034" datatype="html">
+        <source>Error Occured while adding changes</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/task/task-details/task-details.component.ts</context>
+          <context context-type="linenumber">121</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4876229225984812216" datatype="html">
+        <source>Fill the changes and changes in arabic fields.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/task/task-details/task-details.component.ts</context>
+          <context context-type="linenumber">128</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="304389277129815925" datatype="html">
+        <source>Enter arabic translation for the changes</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/task/task-details/task-details.component.ts</context>
+          <context context-type="linenumber">132</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9118835557752453490" datatype="html">
+        <source>Enter English translation for the changes</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/task/task-details/task-details.component.ts</context>
+          <context context-type="linenumber">136</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7322745208380132833" datatype="html">
+        <source>TASKS</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/task/task.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1115656834281984294" datatype="html">
+        <source>Seen: </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/task/task.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6289782785036892979" datatype="html">
+        <source>On Progress: </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/task/task.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1987887412487501312" datatype="html">
+        <source>Done: </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/task/task.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1435295746140534731" datatype="html">
+        <source>Graded: </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/task/task.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

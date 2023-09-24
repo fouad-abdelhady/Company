@@ -7,9 +7,12 @@
     position: fixed;
     background-color: rgba(0, 0, 0, 0.344);
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     transition: 0.5s;
 }
+::-webkit-scrollbar {
+    width: 0px;
+  }
 .taskDetailsContainer{
     width: 40%;
     height: 100%;
@@ -18,7 +21,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+    overflow: scroll;
 }
 .taskDetailsContainer > h4{
     font-weight: 350;
@@ -43,7 +46,7 @@
 .staffMemberInfo :where(div){
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
   
 }
 .staffMemberInfo :where(h3){
@@ -147,4 +150,39 @@ option{
     background-color: rgb(179, 14, 14);
     margin: 10px 5vw;
     width: 90%;
+}
+
+.changesRequest :where(textarea){
+    border: 0;
+    outline: none;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 20px;
+    text-align: center;
+    background-color: white;
+    border: 1px solid #ccc;
+    font-weight: 300;
+    width: 90%;
+    resize: none;
+}
+.changesRequest :where(button){
+    background-color: orange;
+    border: 1px solid orange;
+    font-size: 1rem;
+    outline: none;
+    font-weight: 350;
+    padding: 10px 30px;
+    color: rgb(46, 46, 46);
+    border-radius: 10px;
+    transition: 0.5s;
+}
+.changesRequest :where(button):hover{
+    background-color: whitesmoke;
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 5px gray;
+}
+.changesRequest :last-child{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

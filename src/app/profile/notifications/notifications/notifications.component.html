@@ -1,0 +1,15 @@
+<ng-container *ngIf="notificationsList">
+    <ng-container *ngFor="let notification of notificationsList">
+        <div class="notificationItem">
+            <div class="posterInfo" [style.height]="getHeight()">
+                <img [src]="notification.poster.image??defaultImage" alt="">
+                <h3>{{getPosterName(notification)}}</h3>
+            </div>
+            <hr>
+            <div class="notificationInfo">
+                <h4>{{getText(notification.arTitle, notification.title)}}</h4>
+                <span>{{getText(notification.arDescription, notification.description)}}</span>
+            </div>
+        </div>
+    </ng-container>
+</ng-container>

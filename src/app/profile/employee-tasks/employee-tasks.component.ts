@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Output, Input, OnInit, Inject, LOCALE_ID } from '@angular/core';
 import {TaskServicesService} from '../../services/taskServices/task-services.service';
 import { task } from 'src/app/models/tasks/userTasksModel';
 @Component({
@@ -11,10 +11,12 @@ export class EmployeeTasksComponent implements OnInit {
   @Output() onWindowClose = new EventEmitter();
   @Input() show = true;
   @Input() employeeId?:number;
+  arabic: string = "ar-EG";
+  english:string = "en-US";
   defulatImage = "https://iili.io/HUfysQS.jpg";
   tasksList?: [task];
-  constructor( private tasksServie: TaskServicesService){
-
+  constructor( @Inject(LOCALE_ID) public locale: string ,private tasksServie: TaskServicesService){
+//
   }
   closeWindow(){
     this.show = false;
@@ -34,6 +36,9 @@ export class EmployeeTasksComponent implements OnInit {
         this.closeWindow();
       }
     });
+  }
+  getText(arabic:string, english:string):string{
+    return this.locale == this.arabic? arabic : english;
   }
 
   getImage(){

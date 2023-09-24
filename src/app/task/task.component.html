@@ -1,20 +1,23 @@
 <section class="tasksContainer" >
-    <h1>TASKS</h1>
+    <h1 i18n>TASKS</h1>
+    <div id="search">
+        <app-search-bar (onKeywordUpdate)="onKeywordEntered($event)"></app-search-bar>
+    </div>
     <div class="taskStatusDes">
         <div>
-            <label>Seen: </label>
+            <label i18n>Seen: </label>
             <div class="statusColorDiv" [style.background-color]="getTaskColor(1)"></div>
         </div>
         <div>
-            <label>On Progress: </label>
+            <label i18n>On Progress: </label>
             <div class="statusColorDiv" [style.background-color]="getTaskColor(2)"></div>
         </div>
         <div>
-            <label>Done: </label>
+            <label i18n>Done: </label>
             <div class="statusColorDiv" [style.background-color]="getTaskColor(3)"></div>
         </div>
         <div>
-            <label>Graded: </label>
+            <label i18n>Graded: </label>
             <div class="statusColorDiv" [style.background-color]="getTaskColor(4)"></div>
         </div>
     </div>
@@ -31,8 +34,8 @@
                         </div>
                         <!--*ngIf="task.staffMember.role.toLowerCase() == 'employee'"-->
                     </div>
-                    <h2>{{task.title}}</h2>
-                    <p>{{task.description}}</p>
+                    <h2>{{getText(task.arTitle, task.title)}}</h2>
+                    <p>{{getText(task.arDescription, task.description)}}</p>
                 </div>
             </ng-container>
         </ng-container>

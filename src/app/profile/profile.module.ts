@@ -12,6 +12,7 @@ import { NewTaskComponent } from './new-task/new-task.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { EmployeeHeaderComponent } from './employee-header/employee-header.component';
 import { EmployeeTasksComponent } from './employee-tasks/employee-tasks.component';
+import { NotificationsComponent } from './notifications/notifications/notifications.component';
 @NgModule({
   declarations: [
     ProfileComponent,
@@ -21,7 +22,8 @@ import { EmployeeTasksComponent } from './employee-tasks/employee-tasks.componen
     ProfileInfoComponent,
     NewTaskComponent,
     EmployeeHeaderComponent,
-    EmployeeTasksComponent
+    EmployeeTasksComponent,
+    NotificationsComponent
   ],
   imports: [
     CommonModule,

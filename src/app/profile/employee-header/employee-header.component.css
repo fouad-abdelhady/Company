@@ -18,7 +18,7 @@ h1 :where(span){
     font-style: italic;
     color: rgb(86, 85, 85);
 }
-.managerContainer > div{
+.notificationContainer{
     position: relative;
     width: 50px;
     height: 50px;
@@ -27,7 +27,7 @@ h1 :where(span){
     justify-content: center;
     cursor: pointer;
 }
-#tasks-counter{
+#notification-counter{
     position: absolute;
     width: 30px;
     height: 30px;
@@ -37,8 +37,8 @@ h1 :where(span){
     justify-content: center;
     color: whitesmoke;
     background-color: rgb(190, 5, 5);
-    top: -10px;
-    right: -10px;
+    top: -8px;
+    right: -8px;
     transition: 0.5s;
     font-size: 0.9rem;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -52,6 +52,81 @@ svg{
     height: 35px;
     width: 35px;
 }
-.notificationContainer:hover #tasks-counter{
+.notificationContainer:hover #notification-counter{
     transform: scale(1.1);
 }
+#icons{
+    display: flex;
+    gap: 10px;
+    transition: 0.5s;
+}
+/*#notifications:hover #notificationDetails{
+    height: 300px;
+}*/
+#notificationDetails{
+    border: 0px;
+    position: absolute;
+    z-index: 1;
+    width: 300px;
+    height: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   background-color: white;
+    transition: 0.2s;
+    top: 100%;
+    right: 0%;
+    overflow: auto;
+    border-radius: 10px;
+}
+::-webkit-scrollbar {
+    width: 0px;
+  }
+  
+.notificationItem{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    background-color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px #ccc;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.posterInfo{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-weight: 350;
+    padding: 5px;
+    gap: 5px;
+}
+.posterInfo :where(img){
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+}
+.posterInfo :where(h3){
+    flex-grow: 1;
+    font-weight: 350;
+}
+.notificationInfo {
+    text-align: center;
+    font-size: 1.1rem;
+}
+.notificationInfo :where(h4){
+    font-weight: 400;
+    font-size: 1.3rem;
+    text-align: start;
+    font-weight: 500;
+}
+@media screen and (max-width: 750px) {
+    #icons {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+  
+  }

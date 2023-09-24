@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, LOCALE_ID, Inject  } from '@angular/core';
 import { AuthService } from '../services/authServices/auth.service';
 import { AuthInterceptor } from '../services/auth.interceptor';
 import { Router } from '@angular/router';
@@ -14,10 +14,11 @@ export class AuthComponent implements OnInit {
   password: string = "";
   error: string = "";
   showLoading: boolean = false;
-  constructor(private authService: AuthService, private staffService: StaffService, private router:Router) {
+  constructor(@Inject(LOCALE_ID) private locale: string,private authService: AuthService, private staffService: StaffService, private router:Router) {
 
   }
   ngOnInit(): void {
+    console.log('Current Locale:', this.locale);
     this._checkUserState();
   }
   login() {
@@ -35,12 +36,12 @@ export class AuthComponent implements OnInit {
       },
       error: err=>{
         this.showLoading = false;
-        if(err.status === 401) this.error = "Wrong user name or password."      }
+        if(err.status === 401) this.error = $localize`Wrong user name or password.`      }
     });
   }
   private _isvalid() {
     if(this.userName && this.password) return true;
-    this.error = "Enter the user name and password."
+    this.error = $localize`Enter the user name and password.`;
     return false;
   }
   private _onLoginSuccess(role: string){

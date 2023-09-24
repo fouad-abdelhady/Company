@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Inject, Input, LOCALE_ID } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProfileRes } from 'src/app/models/staff/profile';
 import { AuthInterceptor } from 'src/app/services/auth.interceptor';
@@ -12,8 +12,10 @@ import { StaffService } from 'src/app/services/staffServices/staff.service';
 export class ProfileInfoComponent {
   selectedPic?: string;
   @Input() profile?: ProfileRes;
+  arabic: string = "ar-EG";
+  english: string = "en-US";
   defulatImage = "https://iili.io/HUfysQS.jpg";
-  constructor(private router: Router, private staffService:StaffService){
+  constructor(@Inject(LOCALE_ID) public locale: string, private router: Router, private staffService:StaffService){
     this.profile = this.profile??{
       id:0,
       fullName: "Full Name Here",
@@ -53,5 +55,13 @@ export class ProfileInfoComponent {
   logout(){
     localStorage.removeItem(AuthInterceptor.TOKEN_KEY);
     this.router.navigate(['']);
+  }
+  getRole(role:string){
+    if(this.locale == this.arabic){
+      if(role.toLocaleLowerCase() == "employee") return "موظف";
+      if(role.toLocaleLowerCase() == "manager") return "مدير";
+      if(role.toLocaleLowerCase() == "admin") return "أدمن";
+    }
+    return role;
   }
 }

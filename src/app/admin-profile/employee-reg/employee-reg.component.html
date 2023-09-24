@@ -1,18 +1,18 @@
 <section id="empRegContainer" [style.top]="show? '0':'100%'">
     <div>
         <form [formGroup]="staffMemberInfo" >
-            <input type="text" formControlName="fullName" placeholder="Full Name">
-            <input type="email"  formControlName="email" placeholder="Email">
-            <input type="number" formControlName="salary" placeholder="Salary">
-            <input type="text" formControlName="userName" placeholder="User Name(for login)">
-            <input type="password" formControlName="initPassword" placeholder="Initial Password">
+            <input type="text" formControlName="fullName" i18n-placeholder placeholder="Full Name">
+            <input type="email"  formControlName="email" i18n-placeholder placeholder="Email">
+            <input type="number" formControlName="salary" i18n-placeholder placeholder="Salary">
+            <input type="text" formControlName="userName" i18n-placeholder placeholder="User Name(for login)">
+            <input type="password" formControlName="initPassword" i18n-placeholder placeholder="Initial Password">
             <div>
                 <input type="radio" formControlName="role" id="employee" value="employee" (change)="onRoleSelectChanged()">
-                <label for="employee">Employee</label>
+                <label for="employee" i18n>Employee</label>
             </div>
             <div>
                 <input type="radio" formControlName="role" id="manager" value="manager" (change)="onRoleSelectChanged()">
-                <label for="manager">Manager</label>
+                <label for="manager" i18n>Manager</label>
             </div>
             <select formControlName="managerId">
                 <ng-container *ngFor="let manager of managersList">
@@ -20,8 +20,8 @@
                 </ng-container>
             </select>
             <span>{{error}}</span>
-            <button (click)="addUser()"> ADD USER</button>
-            <button (click)="cancel()" id="cancel">CANCEL</button>
+            <button (click)="addUser()" i18n> ADD USER</button>
+            <button (click)="cancel()" id="cancel" i18n>CANCEL</button>
         </form>
     </div>
 </section>

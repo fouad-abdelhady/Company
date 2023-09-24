@@ -7,15 +7,15 @@
                 <h3>{{tasksList[0].staffMember.name}}</h3>
                 <a href="mailto:{{tasksList[0].staffMember.email}}"> {{tasksList[0].staffMember.email}}</a>
             </div>
-            <label (click)="closeWindow()">CLOSE</label>
+            <label (click)="closeWindow()" i18n>CLOSE</label>
         </div>
         <div class="tasksList">
             <ng-container *ngFor="let task of tasksList">
                 <div class="taskItem">
-                    <h4>{{task.title}}</h4>
-                    <span>{{task.description}}</span>
+                    <h4>{{getText(task.arTitle, task.title)}}</h4>
+                    <span>{{getText(task.arDescription, task.description)}}</span>
                         <div class="gradeContianer">
-                            <label> Grade: </label>
+                            <label i18n> Grade: </label>
                             <span>{{task.grade}}</span>
                         </div>
                 </div>
@@ -25,7 +25,7 @@
     </div>
     <div class="noTasksWindow" *ngIf="!tasksList || tasksList.length <= 0" (click)="closeWindow()">
         <div>
-            <span>There are no graded tasks for this employee.</span>
+            <span i18n>There are no graded tasks for this employee.</span>
         </div>
     </div>
 </section>

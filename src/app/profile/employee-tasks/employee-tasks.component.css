@@ -34,7 +34,7 @@ max-width: 500px;
     gap: 20px;
     align-items: center;
     margin-bottom: 30px;
-    border-radius:  0  0 10px 10px;
+    border-radius:  0  0 0 40px;
 
 }
 .employeeInfo :where(img){

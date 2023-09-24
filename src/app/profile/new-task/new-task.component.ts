@@ -18,21 +18,35 @@ export class NewTaskComponent {
    error: string = '';  
   taskInfo = new FormGroup({
     taskTitle: new FormControl(null,[Validators.required]),
+    arTaskTitle: new FormControl(null,[Validators.required]),
     taskDescription: new FormControl(null,[Validators.required]),
+    arTaskDescription: new FormControl(null,[Validators.required]),
     employeeId: new FormControl(null, [Validators.required])
   });
   addTask(){
+    this.error = "";
     if(!this.taskInfo.valid){
-      this.error = "Fill all the fields";
+      this.error = $localize`Fill all the fields`;
       return;
     }
-   let taskTitle:String = this.taskInfo.controls.taskTitle.value!;
-   if(taskTitle.length > 32){
-    this.error = "Only 32 characters are allowed";
+    var arabic = /[\u0600-\u06FF]/;
+   let taskTitle:string = this.taskInfo.controls.taskTitle.value!;
+   let arTaskTitle:string = this.taskInfo.controls.arTaskTitle.value!;
+   let arTaskDescription:string = this.taskInfo.controls.arTaskDescription.value!;
+   
+   if(taskTitle.length > 32 || arTaskTitle.length > 32){
+      this.error = $localize`Only 32 characters are allowed`;
+      return;
+   }
+   if(!arabic.test(arTaskTitle) || !arabic.test(arTaskDescription)){
+      this.error = $localize`Make sure to write the title and description in arabic`;
+      return;
    }
     this.taskService.assignTask(
-      this.taskInfo.controls.taskTitle.value!, 
+      this.taskInfo.controls.taskTitle.value!,
+      this.taskInfo.controls.arTaskTitle.value!, 
       this.taskInfo.controls.taskDescription.value!, 
+      this.taskInfo.controls.arTaskDescription.value!,
       this.taskInfo.controls.employeeId.value!).subscribe({
         next: res =>{
           this.error = "";

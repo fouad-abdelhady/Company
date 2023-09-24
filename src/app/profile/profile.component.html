@@ -1,8 +1,8 @@
 <section class="bodyContainer">
     <app-profile-info [profile]="profile" class="profileInfo"></app-profile-info>
-    <app-header class="header" *ngIf="profile && profile.role.toLocaleLowerCase() != 'employee'"
+    <app-header class="header" *ngIf="profile && profile.role.toLocaleLowerCase() == 'admin'"
         [name]="profile.fullName" [role]="profile.role"></app-header>
-    <app-employee-header class="header" *ngIf="profile && profile.role.toLocaleLowerCase() == 'employee'"
+    <app-employee-header class="header" *ngIf="profile && profile.role.toLocaleLowerCase() != 'admin'"
         [name]="profile.fullName" [employeeId]="profile.id"></app-employee-header>
     <app-managers class="managers" *ngIf="userTeam && userTeam.manager" [manager]="userTeam.manager"></app-managers>
     <app-employees class="employees" *ngIf="userTeam && userTeam.team && userTeam.team.length>0" [staff]="userTeam.team"

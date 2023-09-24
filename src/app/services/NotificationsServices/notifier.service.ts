@@ -1,18 +1,31 @@
+
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import * as signalR from "@microsoft/signalr"
-import { Services } from '../../services';
+import { Services } from '../services';
+import { NotificationItem } from 'src/app/models/notification/notification';
 @Injectable({
   providedIn: 'root'
 })
 export class NotifierService extends Services {
   UpdateUnseenCount?: Function;
   RefreshTasksList?: Function;
+  public hubConnection?: signalR.HubConnection;
   employeeId: number = 0;
-  constructor() { 
+  constructor(private httpClient: HttpClient) { 
     super();
   }
 
-  public hubConnection?: signalR.HubConnection;
+  getUnseenNotificationsCount(){
+    return this.httpClient
+      .get<number>(this.getURL(NotificationsRoutes.getUnseenNoticationsCount));
+  }
+  getNotificationsByStatus(status:number, page:number = 1, limit:number = 12){
+     let url = `${this.getURL(NotificationsRoutes.getNotificationsByState)}${status}`;
+    return this.httpClient
+      .get<[NotificationItem]>(url);
+  }
+
   public startConnection = () => {
     this.hubConnection = new signalR.HubConnectionBuilder()
       .withUrl('https://localhost:7012/NewTaskAssigned')
@@ -26,7 +39,6 @@ export class NotifierService extends Services {
       .catch(err => console.log('Error while starting connection: ' + err));
     
   }
-
   public addTransferDataListener = () => {
     this.hubConnection!.on('NotifyEmployee', (itemsCount) => {
       console.log("Notification Recieved");
@@ -34,12 +46,17 @@ export class NotifierService extends Services {
       if(this.RefreshTasksList) this.RefreshTasksList();
     });
   }
-   private sendDataToServer(){
+  private sendDataToServer(){
     this.hubConnection?.invoke("NotifyEmployee", this.employeeId).then(() => {
       console.log("Have sent Successfully");
     }).catch(err=>console.log(err));
-   }
-   public closeConnection(){
+  }
+  public closeConnection(){
     this.hubConnection?.stop();
-   }
+  }
+}
+
+enum NotificationsRoutes{
+  getUnseenNoticationsCount = "/Notification/Count",
+  getNotificationsByState = "/Notification/"
 }
