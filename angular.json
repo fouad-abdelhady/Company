@@ -23,7 +23,7 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "localize":[
-              "en-US"
+              "ar-EG"
             ],
             "outputPath": "dist/company",
             "index": "src/index.html",

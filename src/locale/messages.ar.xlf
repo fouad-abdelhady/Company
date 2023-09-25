@@ -568,7 +568,7 @@
       </trans-unit>
       <trans-unit id="733021519476335548" datatype="html">
         <source>REQUEST CHANGES</source>
-        <target>أطلب تعديلات</target>
+        <target>اُطلب تعديلات</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/task/task-details/task-details.component.html</context>
           <context context-type="linenumber">48</context>
@@ -580,6 +580,14 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/task/task-details/task-details.component.ts</context>
           <context context-type="linenumber">100</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1644162454784385320" datatype="html">
+        <source>LOAD MORE</source>
+        <target>أكثر</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/profile/employee-header/employee-header.component.html</context>
+          <context context-type="linenumber">28</context>
         </context-group>
       </trans-unit>
     </body>

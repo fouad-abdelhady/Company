@@ -18,7 +18,8 @@ export class NotificationsComponent implements OnInit{
   }
   ngOnInit(): void {
    // this._getNotifications();
-  }
+   
+    }
   getHeight(){
     return `${this.itemHeight - 20}px`;
   }

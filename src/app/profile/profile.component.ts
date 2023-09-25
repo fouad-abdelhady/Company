@@ -29,7 +29,7 @@ export class ProfileComponent implements OnInit {
     this.staffService.getTeam().subscribe({
       next: res =>{
         this.userTeam = res;
-        console.log(res);
+       // console.log(res);
         this._dismissLoading();
       },
       error:err =>{
@@ -65,11 +65,11 @@ export class ProfileComponent implements OnInit {
     return this.userTeam && this.userTeam.team && this.userTeam.team.length>0 && this.profile!.role.toLowerCase() == 'manager';
   }
   employeeClicked(index: number){
-    console.log('employee clicked');
+   // console.log('employee clicked');
     if(this.profile?.role.toLocaleLowerCase()!="manager") return;
     this.selectedEmployee = this.userTeam?.team[index].id;
     this.showEmployeeTasks = true;
-    console.log(`the employee ${this.selectedEmployee}`);
+    //console.log(`the employee ${this.selectedEmployee}`);
   }
   onEmployeeProfileClosed(){
     this.selectedEmployee = undefined;

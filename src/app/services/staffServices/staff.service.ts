@@ -17,7 +17,7 @@ export class StaffService extends Services{
     super();
   }
   getTeam(){
-    console.log(this.getURL(StaffRoutes.getTeam));
+    //console.log(this.getURL(StaffRoutes.getTeam));
     return this.httpClient.get<UserTeamRes>(this.getURL(StaffRoutes.getTeam));
   }
   getAllEmployees(page = 1, limit = 8){

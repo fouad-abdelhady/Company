@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { TaskServicesService } from 'src/app/services/taskServices/task-services.service';
 import { NotifierService } from 'src/app/services/NotificationsServices/notifier.service';
 import { NotificationItem } from 'src/app/models/notification/notification';
+import { PageInfo } from 'src/app/models/common/pageInfo';
 
 @Component({
   selector: 'app-employee-header',
@@ -22,13 +23,14 @@ export class EmployeeHeaderComponent implements OnInit, OnDestroy, AfterViewInit
   itemHeight = 155;
   @ViewChild('notificationDetails') notificationDetailsRef?: ElementRef;
   notificationsDetails?:HTMLElement;
+  pageInfo?: PageInfo;
   constructor(@Inject(LOCALE_ID) public locale: string  ,private router: Router, private notifier: NotifierService, private tasksServices: TaskServicesService) {
   }
   ngAfterViewInit(): void {
     this.notificationsDetails = this.notificationDetailsRef!.nativeElement;
   }
   ngOnDestroy(): void {
-    console.log("Connecetion Closed");
+    //console.log("Connecetion Closed");
     this.notifier.closeConnection();
   }
   ngOnInit(): void {
@@ -67,16 +69,22 @@ export class EmployeeHeaderComponent implements OnInit, OnDestroy, AfterViewInit
     else{
       this.notificationsDetails!.style.height = `0px`;
       this.tasksCount = 0;
+      this.notificationsList = undefined;
     }
   }
-  private _getNotifications() {
-    this.notifier.getNotificationsByStatus(this.tasksCount == 0 ? 1 : 0).subscribe({
+  private _getNotifications(page = 1) {
+    this.notifier.getNotificationsByStatus(this.tasksCount == 0 ? 1 : 0, page).subscribe({
       next: res => {
-        this.notificationsList = res;
+        if(this.tasksCount == 1 || !this.notificationsList){
+          this.notificationsList = res.notifications;
+        }else{
+          this.notificationsList.push(...res.notifications);
+        }
+        this.pageInfo = res.pageInfo;
         this.notificationsDetails!.style.height = 
-          this.notificationsList.length > 4?
+          this.notificationsList!.length > 4?
           `${4 * this.itemHeight}px`:
-          `${this.notificationsList.length * this.itemHeight}px`;
+          `${this.notificationsList!.length * this.itemHeight}px`;
          if(this.locale == this.arabic){
           this.notificationsDetails!.style.left = '0%'
           this.notificationsDetails!.style.right = "auto";
@@ -95,5 +103,8 @@ export class EmployeeHeaderComponent implements OnInit, OnDestroy, AfterViewInit
   }
   getText(arabic:string, english:string){
     return this.locale == this.arabic? arabic: english;
+  }
+  loadMore(){
+    this._getNotifications(this.pageInfo?.next??1);
   }
 }

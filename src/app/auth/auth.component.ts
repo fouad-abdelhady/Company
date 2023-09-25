@@ -18,7 +18,7 @@ export class AuthComponent implements OnInit {
 
   }
   ngOnInit(): void {
-    console.log('Current Locale:', this.locale);
+    //console.log('Current Locale:', this.locale);
     this._checkUserState();
   }
   login() {

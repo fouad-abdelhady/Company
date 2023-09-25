@@ -122,6 +122,36 @@ svg{
     text-align: start;
     font-weight: 500;
 }
+.loadMore{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transition: 0.5s;
+    border-bottom: 1px solid #ccc;
+    padding: 0 5px;
+}
+.loadMore :where(svg){
+    height: 30px;
+    width: 30px;
+    transition: 0.5s ease-in-out;
+}
+.loadMore :where(span){
+    color: rgb(56, 56, 56);
+    transition: 0.5s;
+    font-size: 1rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.loadMore:hover{
+    border-bottom: 1px solid #000;
+}
+.loadMore:hover :where(svg){
+    transform: rotate(360deg) scale(1.1);
+}
+.loadMore:hover :where(span){
+    transform: scale(1.05);
+    color: black;
+}
 @media screen and (max-width: 750px) {
     #icons {
         display: flex;

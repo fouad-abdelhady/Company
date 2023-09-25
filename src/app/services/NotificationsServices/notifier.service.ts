@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import * as signalR from "@microsoft/signalr"
 import { Services } from '../services';
-import { NotificationItem } from 'src/app/models/notification/notification';
+import { NotificationItem, PaginatedNotificationsRes } from 'src/app/models/notification/notification';
 @Injectable({
   providedIn: 'root'
 })
@@ -20,10 +20,10 @@ export class NotifierService extends Services {
     return this.httpClient
       .get<number>(this.getURL(NotificationsRoutes.getUnseenNoticationsCount));
   }
-  getNotificationsByStatus(status:number, page:number = 1, limit:number = 12){
-     let url = `${this.getURL(NotificationsRoutes.getNotificationsByState)}${status}`;
+  getNotificationsByStatus(status:number, page:number = 1, limit:number = 4){
+     let url = `${this.getURL(NotificationsRoutes.getNotificationsByState)}${status}?page=${page}&limit=${limit}`;
     return this.httpClient
-      .get<[NotificationItem]>(url);
+      .get<PaginatedNotificationsRes>(url);
   }
 
   public startConnection = () => {
@@ -33,7 +33,7 @@ export class NotifierService extends Services {
     this.hubConnection
       .start()
       .then(() => {
-        console.log('Connection started')
+        //console.log('Connection started')
         this.sendDataToServer();
       })
       .catch(err => console.log('Error while starting connection: ' + err));
@@ -41,14 +41,14 @@ export class NotifierService extends Services {
   }
   public addTransferDataListener = () => {
     this.hubConnection!.on('NotifyEmployee', (itemsCount) => {
-      console.log("Notification Recieved");
+     // console.log("Notification Recieved");
       if(this.UpdateUnseenCount) this.UpdateUnseenCount!(itemsCount);
       if(this.RefreshTasksList) this.RefreshTasksList();
     });
   }
   private sendDataToServer(){
     this.hubConnection?.invoke("NotifyEmployee", this.employeeId).then(() => {
-      console.log("Have sent Successfully");
+      //console.log("Have sent Successfully");
     }).catch(err=>console.log(err));
   }
   public closeConnection(){
