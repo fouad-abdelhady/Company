@@ -175,11 +175,25 @@
           <context context-type="linenumber">2</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="5357301299798397852" datatype="html">
+        <source>At: </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/profile/employee-header/employee-header.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="933337084285737583" datatype="html">
+        <source>Seen At: </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/profile/employee-header/employee-header.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="1644162454784385320" datatype="html">
         <source>LOAD MORE</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/profile/employee-header/employee-header.component.html</context>
-          <context context-type="linenumber">28</context>
+          <context context-type="linenumber">39</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7456560158435590491" datatype="html">

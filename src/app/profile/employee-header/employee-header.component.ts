@@ -126,9 +126,6 @@ export class EmployeeHeaderComponent implements OnInit, OnDestroy, AfterViewInit
   }
 
   getFormattedDate(dateStr: string){
-    let date = new Date(dateStr);
-    let dateNow = new Date();
-    let difference = dateNow.getTime() - date.getTime();
-    
+    return new Date(dateStr);
   }
 }

@@ -152,6 +152,18 @@ svg{
     transform: scale(1.05);
     color: black;
 }
+.datesSection{
+    font-size: 0.9rem;
+}
+.datesSection > div{
+    display: flex;
+    align-items: center;
+    
+}
+.datesSection :where(svg){
+    height: 25px;
+    width: 25px;
+}
 @media screen and (max-width: 750px) {
     #icons {
         display: flex;

@@ -590,6 +590,22 @@
           <context context-type="linenumber">28</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="933337084285737583" datatype="html">
+        <source>Seen At: </source>
+        <target>شوهدت في: </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/profile/employee-header/employee-header.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5357301299798397852" datatype="html">
+        <source>At: </source>
+        <target>في: </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/profile/employee-header/employee-header.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
     </body>
   </file>
 </xliff>
