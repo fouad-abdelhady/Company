@@ -1,4 +1,5 @@
 export type RegularRes = {
   state: true,
-  message: string
+  message: string,
+  optionalNum: number
 }

@@ -1,7 +1,7 @@
 <section class="tasksContainer" >
     <h1 i18n>TASKS</h1>
     <div id="search">
-        <app-search-bar (onKeywordUpdate)="onKeywordEntered($event)"></app-search-bar>
+        <app-search-bar (onKeywordUpdate)="onKeywordEntered($event)" [searchTerm]="taskTitle"></app-search-bar>
     </div>
     <div class="taskStatusDes">
         <div>

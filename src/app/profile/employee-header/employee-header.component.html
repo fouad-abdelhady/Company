@@ -11,8 +11,8 @@
             </div>
             <div id="notificationDetails" #notificationDetails>
                 <ng-container *ngIf="notificationsList">
-                    <ng-container *ngFor="let notification of notificationsList"  >
-                        <div class="notificationItem" (click)="showNotificationsBar()">
+                    <ng-container *ngFor="let notification of notificationsList; let notificationindex = index;"  >
+                        <div class="notificationItem" (click)="ShowTaskDetails(notificationindex)" [style.background-color] = "notification.status == 0? 'azure':'white'">
                             <div class="posterInfo">
                                 <img [src]="notification.poster.image??defaultImage" alt="">
                                 <h3>{{getPosterName(notification)}}</h3>
@@ -20,6 +20,15 @@
                             <div class="notificationInfo">
                                 <h4>{{getText(notification.arTitle, notification.title)}}</h4>
                                 <span>{{getText(notification.arDescription, notification.description)}}</span>
+                            </div>
+                            <div *ngIf="false">
+                                <div *ngIf="notification.status == 0">
+                                    <span>At: </span>
+
+                                </div>
+                                <div *ngIf="notification.status >0">
+                                    <span>Seen At: </span>
+                                </div>
                             </div>
                         </div>
                     </ng-container>

@@ -12,8 +12,12 @@ export type NotificationItem = {
     arTitle: string;
     description: string;
     arDescription: string;
+    taskTitle: string;
+    taskId: number;
+    status: number,
     poster: staffMember;
     createdAt: string;
+    seenAt: string;
 };
   
   

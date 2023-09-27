@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, OnDestroy, Inject, LOCALE_ID } from '@angular/core';
 import { TaskServicesService } from '../services/taskServices/task-services.service';
 import { UserTasks, task } from '../models/tasks/userTasksModel';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NotifierService } from '../services/NotificationsServices/notifier.service';
 
 @Component({
@@ -19,13 +19,28 @@ export class TaskComponent implements OnInit, OnDestroy {
   page = 1;
   arabic: string = "ar-EG";
   english:string = "en-US";
-  constructor(@Inject(LOCALE_ID) public locale: string ,private taskService: TaskServicesService, private nottifer: NotifierService, private router: Router){}
+  taskId?:number;
+  taskTitle?: string;
+  constructor( 
+    @Inject(LOCALE_ID) public locale: string ,
+    private taskService: TaskServicesService, 
+    private nottifer: NotifierService, 
+    private router: Router,
+    private activatedRoute: ActivatedRoute
+    ){}
   ngOnDestroy(): void {
     this.nottifer.closeConnection();
   }
   ngOnInit(): void {
+    this._getTaskDetails();
     this.isNotificationInit = false;
     this._GetMyTasks();
+  }
+  private _getTaskDetails() {
+    let params = this.activatedRoute.snapshot.queryParams;
+    this.taskId = params['taskId'];
+    this.taskTitle = params['title'];
+    //console.log(`The params are : ${params['taskId']} - ${params['title']}`);
   }
   initNotifierService() {
     if(this.userTasksRes?.callerId == 0) return;

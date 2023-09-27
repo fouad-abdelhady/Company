@@ -30,7 +30,6 @@ export class EmployeeHeaderComponent implements OnInit, OnDestroy, AfterViewInit
     this.notificationsDetails = this.notificationDetailsRef!.nativeElement;
   }
   ngOnDestroy(): void {
-    //console.log("Connecetion Closed");
     this.notifier.closeConnection();
   }
   ngOnInit(): void {
@@ -56,8 +55,8 @@ export class EmployeeHeaderComponent implements OnInit, OnDestroy, AfterViewInit
     this.notifier.startConnection();
     this.notifier.addTransferDataListener();
   }
-  moveToTasks() {
-    this.router.navigate(['tasks'])
+  moveToTasks(taskId?: number, taskTitle?: string) {
+    this.router.navigate(['tasks'], {queryParams:{taskId: taskId, title: taskTitle}});
   }
   showNotificationsBar() {
     this.showNotifications = !this.showNotifications;
@@ -68,7 +67,7 @@ export class EmployeeHeaderComponent implements OnInit, OnDestroy, AfterViewInit
     }
     else{
       this.notificationsDetails!.style.height = `0px`;
-      this.tasksCount = 0;
+     // this.tasksCount = 0;
       this.notificationsList = undefined;
     }
   }
@@ -106,5 +105,30 @@ export class EmployeeHeaderComponent implements OnInit, OnDestroy, AfterViewInit
   }
   loadMore(){
     this._getNotifications(this.pageInfo?.next??1);
+  }
+  ShowTaskDetails(notificationIndex:number){
+    if(this.notificationsList![notificationIndex].status>0){
+      this.notificationsList![notificationIndex];
+      this.showNotificationsBar();
+    }
+    this.notifier.updateNotificationsStatus(this.notificationsList![notificationIndex].id).subscribe({
+      next: res =>{
+        if(!res.state)  return; //TODO: you need to notify on Error here
+        this.tasksCount = res.optionalNum;
+        this.moveToTasks(this.notificationsList![notificationIndex].taskId, this.notificationsList![notificationIndex].taskTitle);
+      },
+      error: error =>{
+        //TODO: you need to notify on Error here
+      }
+    });
+    //you need to send request to set the notification to seen if it is not already seen
+    //send the notification title and id to the tasks page
+  }
+
+  getFormattedDate(dateStr: string){
+    let date = new Date(dateStr);
+    let dateNow = new Date();
+    let difference = dateNow.getTime() - date.getTime();
+    
   }
 }

@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 import * as signalR from "@microsoft/signalr"
 import { Services } from '../services';
 import { NotificationItem, PaginatedNotificationsRes } from 'src/app/models/notification/notification';
+import { RegularRes } from 'src/app/models/common/regular';
 @Injectable({
   providedIn: 'root'
 })
@@ -25,7 +26,10 @@ export class NotifierService extends Services {
     return this.httpClient
       .get<PaginatedNotificationsRes>(url);
   }
-
+  updateNotificationsStatus(notificationId: number){
+    let fullUrl = `${this.getURL(NotificationsRoutes.updateNotificationStatus)}?notificationId=${notificationId}`;
+    return this.httpClient.put<RegularRes>(fullUrl, {});
+  }
   public startConnection = () => {
     this.hubConnection = new signalR.HubConnectionBuilder()
       .withUrl('https://localhost:7012/NewTaskAssigned')
@@ -41,7 +45,7 @@ export class NotifierService extends Services {
   }
   public addTransferDataListener = () => {
     this.hubConnection!.on('NotifyEmployee', (itemsCount) => {
-     // console.log("Notification Recieved");
+      console.log("Notification Recieved");
       if(this.UpdateUnseenCount) this.UpdateUnseenCount!(itemsCount);
       if(this.RefreshTasksList) this.RefreshTasksList();
     });
@@ -54,9 +58,11 @@ export class NotifierService extends Services {
   public closeConnection(){
     this.hubConnection?.stop();
   }
+
 }
 
 enum NotificationsRoutes{
   getUnseenNoticationsCount = "/Notification/Count",
-  getNotificationsByState = "/Notification/"
+  getNotificationsByState = "/Notification/",
+  updateNotificationStatus = "/Notification/UpdateStatus"
 }
