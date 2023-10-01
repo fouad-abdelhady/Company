@@ -2,9 +2,11 @@
     <div>
         <form [formGroup]="staffMemberInfo" >
             <input type="text" formControlName="fullName" i18n-placeholder placeholder="Full Name">
-            <input type="email"  formControlName="email" i18n-placeholder placeholder="Email">
+            <input type="email"  formControlName="email" i18n-placeholder placeholder="Email" (input)="checkEmailAvailability()">
+            <span>{{emailAvaliabilityMessage}}</span>
             <input type="number" formControlName="salary" i18n-placeholder placeholder="Salary">
-            <input type="text" formControlName="userName" i18n-placeholder placeholder="User Name(for login)">
+            <input type="text" formControlName="userName" i18n-placeholder placeholder="User Name(for login)" (input)="checkUserNameAvailability()">
+            <span>{{userNameAvaliabilityMessage}}</span>
             <input type="password" formControlName="initPassword" i18n-placeholder placeholder="Initial Password">
             <div>
                 <input type="radio" formControlName="role" id="employee" value="employee" (change)="onRoleSelectChanged()">

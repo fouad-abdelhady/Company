@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AllManagersRes } from 'src/app/models/staff/allManagers';
 import { StaffMemberRegRes } from 'src/app/models/staff/staffMemberReg';
+import { AuthService } from 'src/app/services/authServices/auth.service';
 import { StaffService } from 'src/app/services/staffServices/staff.service';
 @Component({
   selector: 'app-employee-reg',
@@ -12,7 +13,12 @@ import { StaffService } from 'src/app/services/staffServices/staff.service';
 export class EmployeeRegComponent{
   @Input() show = false;
   @Input() managersList?:AllManagersRes;
+  regexp = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
   newStaffMember?:StaffMemberRegRes;
+  userNameAvaliabilityMessage: string = "";
+  emailAvaliabilityMessage: string = "";
+  isUserNameValid = false;
+  isEmailValid = false;
   error = "";
   staffMemberInfo = new FormGroup({
     fullName: new FormControl(null,[Validators.required]),
@@ -23,7 +29,7 @@ export class EmployeeRegComponent{
     role: new FormControl(null,[Validators.required]),
     managerId: new FormControl()
   });
-  constructor(private staffService: StaffService, private router:Router){
+  constructor(private staffService: StaffService, private authService: AuthService,private router:Router){
 
   }
 
@@ -50,9 +56,13 @@ export class EmployeeRegComponent{
       this.error = $localize`Please fill all the fields`;
       return false;
     }
-    let regexp = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
-    if(!regexp.test(this.staffMemberInfo.controls.email.value!)){
+   
+    if(!this.regexp.test(this.staffMemberInfo.controls.email.value!) || !this.isEmailValid){
       this.error = $localize`Enter Valid Email`;
+      return false;
+    }
+    if(!this.isUserNameValid) {
+      this.error = $localize`Enter a valid user name`;
       return false;
     }
     if(this.staffMemberInfo.controls.role.value == "employee" && !this.staffMemberInfo.controls.managerId.value){
@@ -85,5 +95,49 @@ export class EmployeeRegComponent{
       return;
     }
     this.staffMemberInfo.controls.managerId.enable();
+  }
+  checkUserNameAvailability(userName?:string|null){
+    userName = this.staffMemberInfo.controls.userName.value;
+    if(!userName) return;
+    this.authService.isUserNameExists(userName).subscribe({
+      next: res =>{
+        if(res.state){
+          this.userNameAvaliabilityMessage = $localize`The User Name is already Exists`;
+          this.isUserNameValid = false;
+          return;
+        }
+        this.isUserNameValid = true;
+      },
+      error: err => {
+        if(err.status === 401) {
+          this.router.navigate(['']);
+          return;
+        }
+        this.isUserNameValid = false;
+        this.userNameAvaliabilityMessage = "";
+      }
+    });
+  }
+  checkEmailAvailability(email?:string|null){
+    email = this.staffMemberInfo.controls.email.value;
+    if(!email ||!this.regexp.test(email)) return;
+    this.staffService.isEmailExists(email).subscribe({
+      next: res =>{
+        if(res.state){
+          this.emailAvaliabilityMessage = $localize`The Email is already Exists`;
+          this.isEmailValid = false;
+          return;
+        }
+        this.isEmailValid = true;
+        this.emailAvaliabilityMessage = "";
+      },
+      error: err => {
+        if(err.status === 401) {
+          this.router.navigate(['']);
+          return;
+        }
+        this.isEmailValid = false;
+      }
+    });
   }
 }

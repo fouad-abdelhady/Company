@@ -27,35 +27,35 @@
         <source>Salary</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/admin-profile/employee-reg/employee-reg.component.html</context>
-          <context context-type="linenumber">6</context>
+          <context context-type="linenumber">7</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7492406196979348755" datatype="html">
         <source>User Name(for login)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/admin-profile/employee-reg/employee-reg.component.html</context>
-          <context context-type="linenumber">7</context>
+          <context context-type="linenumber">8</context>
         </context-group>
       </trans-unit>
       <trans-unit id="623221856807203436" datatype="html">
         <source>Initial Password</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/admin-profile/employee-reg/employee-reg.component.html</context>
-          <context context-type="linenumber">8</context>
+          <context context-type="linenumber">10</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4536004607617325628" datatype="html">
         <source>Employee</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/admin-profile/employee-reg/employee-reg.component.html</context>
-          <context context-type="linenumber">11</context>
+          <context context-type="linenumber">13</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1540281436321485610" datatype="html">
         <source>Manager</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/admin-profile/employee-reg/employee-reg.component.html</context>
-          <context context-type="linenumber">15</context>
+          <context context-type="linenumber">17</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/profile/managers/managers.component.html</context>
@@ -66,14 +66,14 @@
         <source> ADD USER</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/admin-profile/employee-reg/employee-reg.component.html</context>
-          <context context-type="linenumber">23</context>
+          <context context-type="linenumber">25</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6943486270557756671" datatype="html">
         <source>CANCEL</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/admin-profile/employee-reg/employee-reg.component.html</context>
-          <context context-type="linenumber">24</context>
+          <context context-type="linenumber">26</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/profile/new-task/new-task.component.html</context>
@@ -84,35 +84,56 @@
         <source>Please fill all the fields</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/admin-profile/employee-reg/employee-reg.component.ts</context>
-          <context context-type="linenumber">50</context>
+          <context context-type="linenumber">56</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3657750572383247106" datatype="html">
         <source>Enter Valid Email</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/admin-profile/employee-reg/employee-reg.component.ts</context>
-          <context context-type="linenumber">55</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4051214335442958157" datatype="html">
+        <source>Enter a valid user name</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/admin-profile/employee-reg/employee-reg.component.ts</context>
+          <context context-type="linenumber">65</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8347691657473304519" datatype="html">
         <source>Select a manager</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/admin-profile/employee-reg/employee-reg.component.ts</context>
-          <context context-type="linenumber">59</context>
+          <context context-type="linenumber">69</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3804123275539463968" datatype="html">
         <source>Enter Valid Salary</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/admin-profile/employee-reg/employee-reg.component.ts</context>
-          <context context-type="linenumber">63</context>
+          <context context-type="linenumber">73</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2599853012922890508" datatype="html">
         <source>Password must be at least 8 characters</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/admin-profile/employee-reg/employee-reg.component.ts</context>
-          <context context-type="linenumber">68</context>
+          <context context-type="linenumber">78</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3405775725931509498" datatype="html">
+        <source>The User Name is already Exists</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/admin-profile/employee-reg/employee-reg.component.ts</context>
+          <context context-type="linenumber">105</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7740869381540746305" datatype="html">
+        <source>The Email is already Exists</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/admin-profile/employee-reg/employee-reg.component.ts</context>
+          <context context-type="linenumber">126</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1826215573205981970" datatype="html">
@@ -175,25 +196,11 @@
           <context context-type="linenumber">2</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="5357301299798397852" datatype="html">
-        <source>At: </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/profile/employee-header/employee-header.component.html</context>
-          <context context-type="linenumber">26</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="933337084285737583" datatype="html">
-        <source>Seen At: </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/profile/employee-header/employee-header.component.html</context>
-          <context context-type="linenumber">31</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="1644162454784385320" datatype="html">
         <source>LOAD MORE</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/profile/employee-header/employee-header.component.html</context>
-          <context context-type="linenumber">39</context>
+          <context context-type="linenumber">38</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7456560158435590491" datatype="html">

@@ -7,6 +7,7 @@ import { StaffMemberRegReq, StaffMemberRegRes } from 'src/app/models/staff/staff
 import { ProfileRes } from 'src/app/models/staff/profile';
 import { ProfileImageUpdateReq, ProfileImageUpdateRes } from 'src/app/models/staff/profileImageUpdate';
 import { AllManagersRes } from 'src/app/models/staff/allManagers';
+import { RegularRes } from 'src/app/models/common/regular';
 
 @Injectable({
   providedIn: 'root'
@@ -35,6 +36,9 @@ export class StaffService extends Services{
   getAllManagers(){
     return this.httpClient.get<AllManagersRes>(this.getURL(StaffRoutes.getAllManagers));
   }
+  isEmailExists(email?:string){
+    return this.httpClient.get<RegularRes>(`${this.getURL(StaffRoutes.isEmailExists)}${email}`);
+  }
 }
 enum StaffRoutes{
   getTeam = "/Staff/Profile",
@@ -42,5 +46,6 @@ enum StaffRoutes{
   addStaffMember = "/Staff",
   getProfileInfo = "/Staff/UserInfo",
   updateProfileImage = "/Staff/ProfilePic",
-  getAllManagers = "/Staff/Managers"
+  getAllManagers = "/Staff/Managers",
+  isEmailExists = "/Staff/checkEmail/"
 }

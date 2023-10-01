@@ -20,7 +20,7 @@ export class EmployeeHeaderComponent implements OnInit, OnDestroy, AfterViewInit
   @Input() name = "";
   tasksCount = 0;
   @Input() employeeId = 0;
-  itemHeight = 155;
+  itemHeight = 185;
   @ViewChild('notificationDetails') notificationDetailsRef?: ElementRef;
   notificationsDetails?:HTMLElement;
   pageInfo?: PageInfo;
@@ -81,8 +81,8 @@ export class EmployeeHeaderComponent implements OnInit, OnDestroy, AfterViewInit
         }
         this.pageInfo = res.pageInfo;
         this.notificationsDetails!.style.height = 
-          this.notificationsList!.length > 4?
-          `${4 * this.itemHeight}px`:
+          this.notificationsList!.length > 3?
+          `${3 * this.itemHeight}px`:
           `${this.notificationsList!.length * this.itemHeight}px`;
          if(this.locale == this.arabic){
           this.notificationsDetails!.style.left = '0%'
